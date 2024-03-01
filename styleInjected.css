@@ -1,0 +1,58 @@
+#btnCadastro{
+    border: 2px solid white;
+    border-radius: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: transparent;
+    color: white;
+    font-weight: 500;
+    font-size: 13px;
+    transition: 0.4s ease-in-out;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    float: right;
+}
+
+#btnCadastro:hover{
+    border: 2px solid white;
+    color: rgba(159, 49, 174, 0.726);
+    background-color: white;
+    scale: calc(1.07);
+}
+
+#msgCadastro{
+    padding: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    background-color: black;
+    color: white;
+    position: fixed;
+    border-radius: 7px;
+    float: right;
+    width: 400px;
+    left: 80%;
+    transition: 0.2s ease-in-out;
+    animation: fade 4s ease-in-out
+}
+
+@keyframes fade {
+    0%, 100%{
+        opacity: 0;
+    }
+
+    25%{
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    75%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
