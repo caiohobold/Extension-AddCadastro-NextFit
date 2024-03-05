@@ -101,7 +101,7 @@ function init() {
     function gerarEmail(nome) {
       const primeiroNome = nome.split(' ')[0].toLowerCase();
       const sobreNome = nome.split(' ')[1].toLowerCase();
-      const dominios = ['gmail.com', 'hotmail.com', 'outlook.com', 'yahoo.com', 'uol.com.br', 'bol.com.br', 'terra.com.br'];
+      const dominios = ['teste.com', 'teste.com.br', 'testenextfit.com'];
 
       return `${primeiroNome}.${sobreNome}@${dominios[Math.floor(Math.random() * dominios.length)]}`;
     }
