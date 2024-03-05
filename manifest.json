@@ -9,7 +9,7 @@
     "storage"
   ],
   "background": {
-    "scripts": ["background.js"],
+    "scripts": [ "background.js", "api.js"],
     "persistent": false
   },
   "browser_action": {
