@@ -37,8 +37,6 @@ function init() {
       botao.textContent = "+ Cadastro";
     }, 3000);
     const body = document.querySelector('body > div.topbar.shadow');
-    body.insertAdjacentHTML('beforeend', '<div id="msgCadastro">Cadastro adicionado!</div>')
-    const msgCadastro = document.getElementById('msgCadastro')
     setTimeout(() => {
       body.removeChild(msgCadastro)
     }, 4000)
@@ -63,8 +61,12 @@ function init() {
         Sexo: 1
       };
 
+      
+
       try {
         const response = await fetch(INSERT_CLIENTE_URL, { ...postOptions, body: JSON.stringify(payload) });
+        body.insertAdjacentHTML('beforeend', `<div id="msgCadastro">Cadastro adicionado!<br> <span class="nome-cliente">Nome: ${nomeCompleto}</span></div>`)
+        const msgCadastro = document.getElementById('msgCadastro')
 
         if (!response.ok) {
           throw new Error('EX-002: erro no envio para api.nextfit');

@@ -24,7 +24,7 @@
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 30px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.836);
     color: white;
     position: fixed;
     border-radius: 7px;
@@ -33,6 +33,11 @@
     left: 80%;
     transition: 0.2s ease-in-out;
     animation: fade 4s ease-in-out
+}
+
+.nome-cliente{
+    margin-top: 5px;
+    font-size: 12px;
 }
 
 @keyframes fade {
