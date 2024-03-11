@@ -40,15 +40,9 @@ function init() {
     setTimeout(() => {
       body.removeChild(msgCadastro)
     }, 4000)
-    /*
-    const localStorageData = {};
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      const value = localStorage.getItem(key);
-      localStorageData[key] = value;
-    }*/
 
     await postUser();
+
 
     async function postUser() {
       const nomeCompleto = gerarNomeAleatorio();
@@ -58,7 +52,11 @@ function init() {
         Email: gerarEmail(nomeCompleto),
         Cpf: gerarCpfAleatorio(),
         Rg: gerarRgAleatorio(),
-        Sexo: 1
+        Sexo: 1,
+        Cep: gerarEnderecoAleatorio().cep,
+        Bairro: gerarEnderecoAleatorio().bairro,
+        Endereco: gerarEnderecoAleatorio().rua,
+        NumEndereco: gerarEnderecoAleatorio().numero
       };
 
       
@@ -80,8 +78,14 @@ function init() {
           user_id: user.Id,
           user_name: user.Nome,
           user_email: user.Email,
+          Cpf: gerarCpfAleatorio(),
+          Rg: gerarRgAleatorio(),
           DdFone: gerarDDDAleatorio(),
-          Fone: gerarFoneAleatorio()
+          Fone: gerarFoneAleatorio(),
+          Cep: gerarEnderecoAleatorio().cep,
+          Bairro: gerarEnderecoAleatorio().bairro,
+          Endereco: gerarEnderecoAleatorio().rua,
+          NumEndereco: gerarEnderecoAleatorio().numero
         }
 
         console.log(createdUser)
@@ -99,6 +103,27 @@ function init() {
         console.error('Erro:', error);
       }
     }
+
+    function gerarEnderecoAleatorio(){
+      const cep = ["93222280", "69900718", "79108090", "77828200", "97573636", "29172380", "60050165", "76808272", "68903856", "44090504"];
+      const ruas = ["Rua Daniel Dinis da Fonseca", "Rua Mata Grande", "Rua Celso Pinheiro", "Rua Beltrando de Azevedo", "Rua Primeiro de Agosto", "Travessa Rubens Peixoto", "Travessa José Tancredo Filho"]
+      const num_endereco = Math.floor(Math.random() * 1000) + 1;
+      const bairro = ["São Joaquim", "Jardim América", "Tabajara", "Parque Dois Irmãos", "Jardim das Palmeiras", "Cidade Operária", "Santos Dumont"]
+
+      const cepIndex = Math.floor(Math.random() * cep.length);
+      const ruaIndex = Math.floor(Math.random() * ruas.length);
+      const bairroIndex = Math.floor(Math.random() * bairro.length);
+
+      const endereco = {
+        rua: ruas[ruaIndex],
+        numero: num_endereco,
+        cep: cep[cepIndex],
+        bairro: bairro[bairroIndex]
+      }
+
+      return endereco;
+    }
+
 
     function gerarEmail(nome) {
       const primeiroNome = nome.split(' ')[0].toLowerCase();
@@ -144,6 +169,8 @@ function init() {
     function gerarFoneAleatorio() {
       return Math.floor(Math.random() * 1000000000).toString().padStart(9, '0');
     }
+
+
 
 
     function gerarNomeAleatorio() {

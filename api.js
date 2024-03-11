@@ -7,7 +7,7 @@ const URL = 'https://nextfit-utils-api-production.up.railway.app/users';
 
 const postCreatedUser = async (createdUser) => {
     if (typeof createdUser !== 'object')
-        throw new Error(`EX-001: ${typeof createdUser} nao é objeto comilança de merda`);
+        throw new Error(`EX-001: ${typeof createdUser} nao é objeto.`);
 
 
     const payload = {
