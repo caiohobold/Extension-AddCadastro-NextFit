@@ -3,7 +3,7 @@
  * @returns {Promise<number>} - Retorna o status da requisição feita para a API cagada em ts
  */
 
-const URL = 'http://localhost:4000/users';
+const URL = 'https://nextfit-utils-api-production.up.railway.app/users';
 
 const postCreatedUser = async (createdUser) => {
     if (typeof createdUser !== 'object')
