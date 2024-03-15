@@ -4,9 +4,7 @@
   "version": "1.0",
   "description": "Adiciona cadastros automaticamente no Next Fit",
   "permissions": [
-    "activeTab",
-    "https://app.nextfit.com.br/*",
-    "storage"
+    "https://app.nextfit.com.br/*"
   ],
   "background": {
     "scripts": [ "background.js", "api.js"],
