@@ -1,16 +1,16 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Next Fit Cadastro",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Adiciona cadastros automaticamente no Next Fit",
   "permissions": [
     "https://app.nextfit.com.br/*"
   ],
   "background": {
-    "scripts": [ "background.js", "api.js"],
-    "persistent": false
+    "service_worker": "background.js",
+    "script": ["background.js", "api.js"]
   },
-  "browser_action": {
+  "action": {
     "default_icon": {
       "16": "logos/logonextfit.png",
       "48": "logos/logonextfit.png",
